@@ -1,25 +1,26 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const Answer = ({ onSubmitAnswer }) => {
-  const [answer, setAnswer] = useState('');
+function Answer({ answer, setAnswer, onSubmitAnswer }) {
+  const handleChange = (e) => {
+    setAnswer(e.target.value);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmitAnswer(answer);
-    setAnswer(''); // Clear the input after submitting
+    onSubmitAnswer();
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        value={answer}
-        onChange={(e) => setAnswer(e.target.value)}
-        placeholder="Enter your answer"
+      <input 
+        type="text" 
+        value={answer} 
+        onChange={handleChange} 
+        placeholder="Type your answer here"
       />
       <button type="submit">Submit</button>
     </form>
   );
-};
+}
 
 export default Answer;

@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Riddle from './components/Riddle';
+import Answer from './components/Answer';
+import Result from './components/Result';
+import Score from './components/Score';
 
-function App() {
+const App = () => {
+  // Example data, you can replace this with dynamic data later
+  const [riddle, setRiddle] = useState("What has keys but can't open locks?");
+  const [score, setScore] = useState(0);
+  const [result, setResult] = useState('');
+
+  const handleAnswerSubmit = (answer) => {
+    if (answer.toLowerCase() === "piano") {
+      setResult("Correct!");
+      setScore(score + 1);
+    } else {
+      setResult("Wrong answer. Try again!");
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Riddle App</h1>
+      <Score score={score} />
+      <Riddle riddle={riddle} />
+      <Answer onSubmitAnswer={handleAnswerSubmit} />
+      <Result result={result} />
     </div>
   );
-}
+};
 
 export default App;

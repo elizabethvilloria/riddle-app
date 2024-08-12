@@ -1,38 +1,115 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #1c466c;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
 .App {
   text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  max-width: 600px;
+  width: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.riddle {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  color: #007acc;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.answer {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.answer input {
+  padding: 10px;
+  font-size: 1em;
+  border: 2px solid #007acc;
+  border-radius: 5px;
+  width: 80%;
+  margin-right: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.answer button {
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #007acc;
+  color: rgb(218, 107, 144);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.answer button:hover {
+  background-color: #005f99;
+}
+
+.score {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.result {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.result h2 {
+  font-size: 2em;
+  color: #007acc;
+  margin-bottom: 20px;
+}
+
+.result button {
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #007acc;
+  color: rgb(94, 66, 66);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.result button:hover {
+  background-color: #005f99;
+}
+
+.App {
+  transition: transform 0.3s ease-in-out;
+}
+
+.App:hover {
+  transform: scale(1.02);
+}
+
+.answer input:focus {
+  border-color: #005f99;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 127, 204, 0.5);
+}
+
+@media (max-width: 600px) {
+  .App {
+    padding: 10px;
+    width: 90%;
   }
-  to {
-    transform: rotate(360deg);
+
+  .answer input {
+    width: 70%;
   }
 }

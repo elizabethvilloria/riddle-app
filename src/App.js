@@ -3,6 +3,8 @@ import Riddle from './components/Riddle';
 import Answer from './components/Answer';
 import Result from './components/Result';
 import Score from './components/Score';
+import './App.css';
+
 
 const riddles = [
   {
@@ -81,7 +83,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Riddle App</h1>
+      <h1>Riddle Me This</h1>
       {!showResult ? (
         <>
           <Riddle riddle={riddles[currentRiddleIndex].question} />
